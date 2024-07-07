@@ -38,3 +38,7 @@ onMounted(() => {
   fetchApods();
 });
 </script>
+
+
+<style>
+</style>
