@@ -1,22 +1,21 @@
 <template>
-  <header>
-    <div class="wrapper">
-      <h1>Hello Vue Router</h1>
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/apods">Apod</RouterLink>
-        <RouterLink :to="`/apods/${selectedApodId}`">Apod detail</RouterLink>
-      </nav>
-    </div>
-  </header>
 
+<main  class="bg-space-home h-100">
+
+  <Navbar />
+  
   <RouterView />
+
+  <Footer/>
+</main>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
 import { getApods } from './api/apod';
+import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
 
 const apods = ref([]);
 const loading = ref(true);

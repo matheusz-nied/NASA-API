@@ -1,7 +1,6 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from "vue-router";
-
-const Home = { template: "<div>Home</div>" };
+import Home from "../pages/Home.vue";
 const Apod = { template: "<div>Apod</div>" };
 const ApodDetail = { template: " <div> Product Page </div> <span> Looking for Product: {{ $route.params.id }} </span>" };
 
