@@ -1,24 +1,25 @@
 <template>
 
-<main  class="bg-space-home h-100">
+  <main :class="mainClass" class="delay-100	">
 
-  <Navbar />
-  
-  <RouterView />
+    <Navbar />
 
-  <Footer/>
-</main>
+    <RouterView />
+
+    <Footer></Footer>
+  </main>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { RouterLink, RouterView } from 'vue-router';
+import { ref, onMounted, computed } from 'vue';
+import { RouterLink, RouterView, useRoute } from 'vue-router';
 import { getApods } from './api/apod';
 import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
 
 const apods = ref([]);
 const loading = ref(true);
+const route = useRoute();
 
 const fetchApods = async () => {
 
@@ -36,8 +37,15 @@ const fetchApods = async () => {
 onMounted(() => {
   fetchApods();
 });
+
+const isDetailPage = computed(() => route.path.startsWith('/apods/'));
+
+// Classe principal dinâmica com base na página atual
+const mainClass = computed(() => ({
+  'bg-space-home': !isDetailPage.value, // Página inicial
+  'bg-space-detail': isDetailPage.value, // Página de detalhes
+}));
 </script>
 
 
-<style>
-</style>
+<style></style>

@@ -8,14 +8,14 @@
             </RouterLink>
         <ul class="flex gap-16 items-center justify-center  space-x-4 flex-grow text-lg font-medium	underline underline-offset-4
 ">
-            <li class="hover:scale-105 duration-300">
+            <li class="hidden md:block hover:scale-105 duration-300">
                 <RouterLink to="/apods">Notices</RouterLink>
             </li>
-            <li  class="hover:scale-105 duration-300" >
-                <RouterLink to="/">Images</RouterLink>
+            <li  class="hidden md:block hover:scale-105 duration-300" >
+                <RouterLink to="/apods">Images</RouterLink>
             </li>
-            <li  class="hover:scale-105 duration-300">
-                <RouterLink :to="`/apods/12`">About</RouterLink>
+            <li  class="hidden md:block hover:scale-105 duration-300">
+                <a href="#about">About</a>
             </li>
         </ul>
 

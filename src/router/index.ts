@@ -1,8 +1,10 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../pages/Home.vue";
-const Apod = { template: "<div>Apod</div>" };
-const ApodDetail = { template: " <div> Product Page </div> <span> Looking for Product: {{ $route.params.id }} </span>" };
+import Apods from "../pages/Apods.vue";
+import ApodDetail from "@/pages/ApodDetail.vue";
+// const ApodDetail = {   template: '<div>Apod date {{ $route.params.date }}</div>',
+// };
 
 const routes = [
   {
@@ -13,12 +15,13 @@ const routes = [
   {
     path: "/apods",
     name: "Apod",
-    component: Apod,
+    component: Apods ,
   },
   {
-    path: "/apods/:id",
+    path: "/apods/:date",
     name: "ApodDetail",
     component: ApodDetail,
+    props: true,
   },
 ];
 
