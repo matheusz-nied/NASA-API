@@ -1,10 +1,10 @@
 <template>
     <button
       :class="[
-        'font-medium py-2 px-4 rounded',
+        'font-medium py-2 px-4 ',
         outline
           ? 'bg-transparent border border-secondary text-secondary'
-          : 'bg-primary text-black',
+          : 'bg-primary text-black shadow-xl rounded hover:bg-gradient-to-b dark:shadow-green-900 shadow-green-200 hover:shadow-2xl hover:shadow-green-400 hover:-tranneutral-y-px',
         hoverEffect ? 'hover:-translate-y-1 duration-300' : ''
       ]"
       :style="{

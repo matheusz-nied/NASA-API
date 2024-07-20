@@ -3,8 +3,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../pages/Home.vue";
 import Apods from "../pages/Apods.vue";
 import ApodDetail from "@/pages/ApodDetail.vue";
-// const ApodDetail = {   template: '<div>Apod date {{ $route.params.date }}</div>',
-// };
 
 const routes = [
   {
@@ -24,10 +22,16 @@ const routes = [
     props: true,
   },
 ];
-
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0, behavior: 'smooth' };
+    }
+  },
 });
 
 export default router;

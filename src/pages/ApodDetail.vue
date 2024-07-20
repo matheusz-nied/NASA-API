@@ -33,16 +33,13 @@
       document.body.style.backgroundSize = 'cover';
       document.body.style.backgroundRepeat = 'no-repeat';
       document.body.style.backgroundPosition = 'center center';
-      this.scrollToTop();
       } else {
 
         this.$router.push('/');
       }
     },
     methods: {
-        scrollToTop() {
-      window.scrollTo(0, 0); 
-    },   isImage(url) {
+  isImage(url) {
       return /\.(jpeg|jpg|gif|png)$/i.test(url);
     },
     isYouTubeVideo(url) {

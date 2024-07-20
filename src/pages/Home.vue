@@ -47,7 +47,7 @@
                     </p>
                 </div>
                 <div class="absolute bottom-4 right-4 text-right">
-                    <Button text="Check it out" :outline="true" width="150" :hoverEffect="false" link="/apods"></Button>
+                    <Button text="Check it out" :outline="true" width=150 :hoverEffect="false" link="/apods"></Button>
                 </div>
 
             </div>

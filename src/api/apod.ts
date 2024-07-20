@@ -7,14 +7,14 @@ const getFormattedDate = (date: Date) => {
   return `${year}-${month}-${day}`;
 };
 
-const getApods = async () => {
+const fetchAndCacheApods = async () => {
   const now = new Date();
   const end_date = getFormattedDate(now);
 
   const pastDate = new Date();
   pastDate.setDate(pastDate.getDate() - 30); // Subtrair 30 dias da data atual
   const start_date = getFormattedDate(pastDate);
-
+console.log("fetching nasa...")
   const response = await apiClient.get("/apod", {
     params: {
       api_key: import.meta.env.VITE_API_KEY,
@@ -23,7 +23,26 @@ const getApods = async () => {
     },
   });
 
-  return response;
+  // Salva os dados e a data de cache no localStorage
+  localStorage.setItem('apodsData', JSON.stringify(response.data));
+  localStorage.setItem('apodsCacheDate', end_date);
+
+  return response.data;
+};
+
+const getApods = async () => {
+  const cachedDate = localStorage.getItem('apodsCacheDate');
+  const now = new Date();
+  const end_date = getFormattedDate(now);
+  if (cachedDate === end_date) {
+    const cachedData = localStorage.getItem('apodsData');
+
+    const data =  cachedData ? JSON.parse(cachedData) : await fetchAndCacheApods();
+    console.log(data)
+    return data;
+  } else {
+    return await fetchAndCacheApods();
+  }
 };
 
 export { getApods };

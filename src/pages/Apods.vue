@@ -1,4 +1,6 @@
 <template>
+  <div class=" min-h-lvh	">
+
   <div v-if="isLoading" class="flex flex-col items-center justify-center mt-36">
 
     <div role="status">
@@ -14,7 +16,7 @@
       <span class="sr-only">Loading...</span>
     </div>
   </div>
-  <div class="flex flex-col items-center justify-center py-8 px-4 md:px-12 min-h-screen	">
+  <div class="flex flex-col items-center justify-center py-8 px-4 md:px-12">
 
     <h1 v-if="!isLoading"
       class="mb-16 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
@@ -25,6 +27,8 @@
         :imageUrl="apod.url" />
     </div>
   </div>
+</div>
+
 </template>
 
 <script>
@@ -48,11 +52,10 @@ export default {
   },
   async mounted() {
     try {
-      const start_date = '2023-01-01';
-      const end_date = '2023-01-31';
-      const response = await getApods(start_date, end_date);
-      console.log('API response:', response.data);
-      this.apods = response.data;
+
+      const response = await getApods();
+      console.log('API response:', response);
+      this.apods = response;
       console.log('APODs data:', this.apods);
     } catch (error) {
       console.error('Error fetching APODs:', error);
