@@ -5,6 +5,7 @@
 
 NASA APOD Viewer is a modern web application built using Vue.js, Axios, and Tailwind CSS to provide a seamless and engaging user experience. This app allows users to explore NASA's Astronomy Picture of the Day (APOD) from the API. It handles data efficiently by caching requests and only updates data once a day.
 
+[Acesse o site por aqui](https://science-api.vercel.app/)
 
 ![Home page](public/image.png)
 
