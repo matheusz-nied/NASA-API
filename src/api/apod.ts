@@ -25,7 +25,7 @@ const fetchAndCacheApods = async () => {
 console.log("fetching nasa...")
   const response = await apiClient.get("/apod", {
     params: {
-      api_key: import.meta.env.VITE_API_KEY,
+      api_key: "import.meta.env.VITE_API_KEY",
       start_date,
       end_date,
     },
