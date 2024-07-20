@@ -14,7 +14,7 @@
 
         <div class="flex gap-10 md:gap-16 mt-16 flex-col	md:flex-row	">
             <button
-      class="font-medium py-2 px-4 bg-primary text-black shadow-xl rounded hover:bg-gradient-to-b dark:shadow-green-900 shadow-green-200 hover:shadow-2xl hover:shadow-green-400 hover:-tranneutral-y-px hover:-translate-y-1 duration-300'"
+      class="font-medium py-2 px-4 bg-primary text-black shadow-xl rounded hover:bg-gradient-to-b dark:shadow-green-900 shadow-green-200 hover:shadow-2xl hover:shadow-green-400 hover:-tranneutral-y-px hover:-translate-y-1 duration-300"
       :style="{
         width: '192px',
         height: '40px'
@@ -22,7 +22,14 @@
     >
       <RouterLink to="/apods">Starting exploring</RouterLink>
     </button>
-            <a href="#how-works"> <Button text="Features" link="#how-works" :outline=true></Button>
+            <a href="#how-works">     <button
+      class="font-medium py-2 px-4 bg-transparent border border-secondary text-secondary hover:-translate-y-1 duration-300"
+      :style="{
+        width: '192px',
+        height: '40px'
+      }"
+    > Features
+    </button>
             </a>
         </div>
         <section class=" w-4/5 md:w-2/5 mt-32 2xl:mt-48 text-center flex flex-col items-center gap-24">
@@ -54,7 +61,7 @@
                     </p>
                 </div>
                 <div class="absolute bottom-4 right-4 text-right">
-                    <Button text="Check it out" :outline="true" width=150 :hoverEffect="false" link="/apods"></Button>
+                    <Button  :outline="true" width=150 :hoverEffect="false" link="/apods"></Button>
                 </div>
 
             </div>

@@ -12,7 +12,7 @@
         height: height ? `${height}px` : '40px'
       }"
     >
-      <RouterLink :to="link">{{ text || 'View more'}}</RouterLink>
+      <RouterLink :to="link">Check it out</RouterLink>
     </button>
   </template>
   
@@ -20,7 +20,6 @@
   export default {
     name: "Button",
     props: {
-      text: {type:String, default:'View more'},
       link: String,
       outline: {
         type: Boolean,
