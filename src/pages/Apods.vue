@@ -23,7 +23,7 @@
       Images from the <mark class="px-2 text-white bg-blue-600 rounded dark:bg-green-700">last 30 days</mark></h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-      <AsyncCard v-for="apod in apods" :key="apod.date" :title="apod.title" :explanation="apod.explanation" :apod="apod"
+      <Card v-for="apod in apods" :key="apod.date" :title="apod.title" :explanation="apod.explanation" :apod="apod"
         :imageUrl="apod.url" />
     </div>
   </div>
@@ -34,15 +34,13 @@
 <script>
 import { defineAsyncComponent } from 'vue';
 import { getApods } from '@/api/apod';
+import Card from '@/components/Card.vue';
 
-const AsyncCard = defineAsyncComponent(() =>
-  import('../components/Card.vue')
-);
 
 export default {
   name: 'Apods',
   components: {
-    AsyncCard,
+    Card,
   },
   data() {
     return {
