@@ -9,13 +9,13 @@
         <ul class="flex gap-16 items-center justify-center  space-x-4 flex-grow text-lg font-medium	underline underline-offset-4
 ">
             <li class="hidden md:block hover:scale-105 duration-300">
-                <RouterLink to="/apods">Notices</RouterLink>
+                <RouterLink to="/">Home</RouterLink>
             </li>
             <li  class="hidden md:block hover:scale-105 duration-300" >
                 <RouterLink to="/apods">Images</RouterLink>
             </li>
             <li  class="hidden md:block hover:scale-105 duration-300">
-                <a href="#about">About</a>
+                <a href="/#about">About</a>
             </li>
         </ul>
 

@@ -1,29 +1,27 @@
 import apiClient from "./axios";
-import apodsData from "../api/fake.json";
 
-const getFormattedDate = () => {
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = String(now.getMonth() + 1).padStart(2, "0");
-  const day = String(now.getDate()).padStart(2, "0");
+const getFormattedDate = (date: Date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
   return `${year}-${month}-${day}`;
 };
 
 const getApods = async () => {
-  const start_date = "2024-07-13";
-  const end_date = getFormattedDate();
+  const now = new Date();
+  const end_date = getFormattedDate(now);
 
-  const responseApod = await apiClient.get("/apod", {
+  const pastDate = new Date();
+  pastDate.setDate(pastDate.getDate() - 30); // Subtrair 30 dias da data atual
+  const start_date = getFormattedDate(pastDate);
+
+  const response = await apiClient.get("/apod", {
     params: {
       api_key: import.meta.env.VITE_API_KEY,
       start_date,
       end_date,
     },
   });
-  console.log(responseApod.data);
-  const response = {
-    data: [...Object.values(apodsData), ...responseApod.data],
-  };
 
   return response;
 };

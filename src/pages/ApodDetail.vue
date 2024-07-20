@@ -1,8 +1,11 @@
 <template>
-    <div class="flex flex-col items-center justify-center py-16 px-4 md:px-12">
+    <div class="flex flex-col items-center justify-center py-4 px-4 md:px-12">
       <div v-if="apod" class="flex flex-col items-center justify-center gap-12">
-        <h1 class="text-5xl font-medium w-4/5 md:w-4/5 text-center mt-16 2xl:mt-28">{{ apod.title }}</h1>
-        <img v-if="isImage(apod.hdurl)" :src="apod.hdurl" :alt="apod.title" />
+        <!-- <h1 class="text-5xl font-medium w-4/5 md:w-4/5 text-center mt-8 mb-12 2xl:mt-28">{{ apod.title }}</h1> -->
+        <h1
+      class="text-white text-center xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl xs:text-xl mb-12 rounded-sm font-semibold bg-green-800 p-2 bg-opacity-40 rounded-sm">
+      {{ apod.title }}</h1>
+        <img v-if="isImage(apod.hdurl)" :src="apod.hdurl" :alt="apod.title" class="border rounded-sm"/>
 
         <iframe v-else-if="isYouTubeVideo(apod.url)" :src="apod.url" frameborder="0" allowfullscreen></iframe>
   <div class="mt-8 px-4 md:px-24">
