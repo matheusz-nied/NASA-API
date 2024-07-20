@@ -7,12 +7,20 @@ const getFormattedDate = (date: Date) => {
   return `${year}-${month}-${day}`;
 };
 
+const sortByDateDescending = (data: any[]) => {
+  return data.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB.getTime() - dateA.getTime();
+  });
+};
+
 const fetchAndCacheApods = async () => {
   const now = new Date();
   const end_date = getFormattedDate(now);
 
   const pastDate = new Date();
-  pastDate.setDate(pastDate.getDate() - 30); // Subtrair 30 dias da data atual
+  pastDate.setDate(pastDate.getDate() - 30); 
   const start_date = getFormattedDate(pastDate);
 console.log("fetching nasa...")
   const response = await apiClient.get("/apod", {
@@ -22,12 +30,12 @@ console.log("fetching nasa...")
       end_date,
     },
   });
+  const sortedData = sortByDateDescending(response.data);
 
-  // Salva os dados e a data de cache no localStorage
-  localStorage.setItem('apodsData', JSON.stringify(response.data));
+  localStorage.setItem('apodsData', JSON.stringify(sortedData));
   localStorage.setItem('apodsCacheDate', end_date);
 
-  return response.data;
+  return sortedData;
 };
 
 const getApods = async () => {
