@@ -20,7 +20,7 @@
   export default {
     name: "Button",
     props: {
-      text: String,
+      text: {type:String, default:'View more'},
       link: String,
       outline: {
         type: Boolean,
