@@ -5,8 +5,8 @@ export default {
     theme: {
       extend: {
         backgroundImage: {
-         'space-home': "url('/src/assets/home.png')",
-         'space-read':"url('/src/assets/read.png')",
+         'space-home': "url('/public/home.png')",
+         'space-read':"url('/public/read.png')",
         },
         colors:{
           primary: '#16D900',

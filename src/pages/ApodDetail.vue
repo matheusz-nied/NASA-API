@@ -29,7 +29,7 @@
       const storedApod = localStorage.getItem('selectedApod');
       if (storedApod) {
         this.apod = JSON.parse(storedApod);
-        document.body.style.backgroundImage = `url(/src/assets/read.png)`;
+        document.body.style.backgroundImage = `url(/public/read.png)`;
       document.body.style.backgroundSize = 'cover';
       document.body.style.backgroundRepeat = 'no-repeat';
       document.body.style.backgroundPosition = 'center center';

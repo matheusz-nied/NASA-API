@@ -13,7 +13,7 @@
     </div>
     <a @click.prevent="goToDetail">
       <div class="absolute bottom-4 right-4 text-right">
-        <Button text="Check it out" :outline="true" width=150 :hoverEffect="false"></Button>
+        <Button text="View more" :outline="true" width=150 :hoverEffect="false"></Button>
       </div>
     </a>
   </div>
