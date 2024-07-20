@@ -12,8 +12,8 @@
 
 
 
-        <div class="flex gap-10 md:gap-16 mt-16 flex-col	md:flex-row	">
-            >
+        <div class="flex gap-10 md:gap-16 mt-12 md:mt-24 flex-col	md:flex-row	">
+            
             <RouterLink
                 class=" flex items-center justify-center font-medium py-2 px-4 bg-primary text-black shadow-xl rounded hover:bg-gradient-to-b dark:shadow-green-900 shadow-green-200 hover:shadow-2xl hover:shadow-green-400 hover:-tranneutral-y-px hover:-translate-y-1 duration-300"
                 :style="{
