@@ -13,7 +13,13 @@
     </div>
     <a @click.prevent="goToDetail">
       <div class="absolute bottom-4 right-4 text-right">
-        <Button  :outline="true" width=150 :hoverEffect="false"></Button>
+        <button
+          class="font-medium py-2 px-4 bg-transparent border border-secondary text-secondary "
+          :style="{
+            width: '150px',
+            height: '40px'
+          }"> Check it
+        </button>
       </div>
     </a>
   </div>
@@ -52,8 +58,8 @@ export default {
         });
       }
       this.$nextTick(() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     }, isImage(url) {
       return /\.(jpeg|jpg|gif|png)$/i.test(url);
     },
