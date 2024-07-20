@@ -60,8 +60,10 @@
             </h2>
             <p class="mt-10">
                 The application uses <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r to-green-600 font-semibold from-green-300">Vue.Js</span> and
-                Axios to interact with NASA APIs, Tailwind CSS for responsive design. It provides a dynamic interface
+                    class="text-transparent bg-clip-text bg-gradient-to-r to-green-600 font-semibold from-green-300">Vue.Js</span>
+                and
+                Axios to interact with NASA APIs, Tailwind CSS for responsive design and localStorage to enhance
+                performance by caching data. It provides a dynamic interface
                 for exploring
                 NASA's catalog.</p>
 
